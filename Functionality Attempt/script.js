@@ -14,12 +14,16 @@ document.getElementById("view").addEventListener("click", function(){
 });
 
 document.getElementById("binary").addEventListener("click", function(){
-    let value = changeP.innerHTML;
-    let bi = "0";
-    for(let a=1; a<value; a*2){
-        bi = bi + "0";
+    let value = document.getElementById("changeP").innerHTML;
+    let bi = "";
+    let r =  0;
+    while(value > 0){
+        r = value/2;
+        bi = bi + (value%2);
+        value = r;
     }
     console.log(bi);
+    document.getElementById("change2").innerHTML = bi;
 });
 console.log(document.title);
 
