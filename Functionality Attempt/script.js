@@ -16,14 +16,22 @@ document.getElementById("view").addEventListener("click", function(){
 document.getElementById("binary").addEventListener("click", function(){
     let value = document.getElementById("changeP").innerHTML;
     let bi = "";
-    let r =  0;
-    while(value > 0){
-        r = value/2;
-        bi = bi + (value%2);
-        value = r;
-    }
+    let r = ""
+    while (value > 0){
+        r = value % 2;        
+        bi = r + bi;     
+        value = parseInt(value / 2); 
+        }
     console.log(bi);
-    document.getElementById("change2").innerHTML = bi;
+    document.getElementById("biVal").innerHTML = bi;
+});
+
+document.getElementById("clear").addEventListener("click", function(){
+        document.getElementById("changeP").innerHTML = 0;
+        document.getElementById("biVal").innerHTML = "--";
+        
+        for(let a=1; a<11; a++){
+        document.getElementById(a).innerHTML = "--";
+    }
 });
 console.log(document.title);
-
